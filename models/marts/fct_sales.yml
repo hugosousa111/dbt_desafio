@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: Sales fact
+    columns:
+      - name: salesorderdetailid
+        description: One incremental unique number per product sold.
+        tests:
+          - unique
+          - not_null
+      - name: salesorderid
+        description: Incremental number, unique per order.
+        tests:
+          - not_null
+      - name: products_sk
+        description: surrogate key dim_products
+        tests:
+          - not_null
+      - name: creditcards_sk
+        description: surrogate key dim_creditcards
+      - name: customers_sk
+        description: surrogate key dim_customers
+        tests:
+          - not_null
+      - name: datesales_sk
+        description: surrogate key dim_datesales
+        tests:
+          - not_null
+      - name: locations_sk
+        description: surrogate key dim_locations
+        tests:
+          - not_null
+      - name: salesreasonname_agg
+        description: Sales reasons descriptions, separated by |.
+      - name: reasontype_agg
+        description: Category the sales reason belongs to, separated by |.
+      - name: statussales_sk
+        description: surrogate key dim_statussales
+        tests:
+          - not_null
+      - name: orderqty
+        description: Quantity ordered per product.
+        tests:
+          - not_null
+      - name: unitprice
+        description: Selling price of a single product.
+        tests:
+          - not_null
+      - name: totalvalue
+        description: orderqty * unitprice
+        tests:
+          - not_null
