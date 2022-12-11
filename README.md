@@ -1,15 +1,18 @@
-Welcome to your new dbt project!
+### Fists steps
+First, create credencial file, like:
+- `/home/your_user/.dbt/profiles.yml`
 
-### Using the starter project
+Create your venv:
+- `python -m venv venv`
 
-Try running the following commands:
-- dbt run
-- dbt test
+Active your venv:
+- `source venv/bin/activate`
 
+Install necessary requirements:
+- `pip install -r requirements.txt`
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](http://community.getbdt.com/) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+To run:
+- `dbt run`
+  
+To test:
+- `dbt test`
