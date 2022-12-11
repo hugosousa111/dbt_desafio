@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: adventure_works
+    schema: adventure_works
+    description: The data source is a datawarehouse that is a copy of a postgres database from the company Adventure Works
+    tables:
+      - name: salesorderdetail
+      - name: salesorderheader
+      - name: creditcard
+      - name: stateprovince
+      - name: address  
+      - name: countryregion
+      - name: product
+      - name: person
+      - name: customer
+      - name: salesreason
+      - name: salesorderheadersalesreason
