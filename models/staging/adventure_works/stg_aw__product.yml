@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_aw__product
+    description: Products sold or used in the manufacturing of sold products.
+    columns:
+      - name: productid
+        description: Primary key for Product records.
+        tests:
+          - unique
+          - not_null
+      - name: productname
+        description: Name of the product.
+        tests:
+          - not_null

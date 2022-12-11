@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_aw__customer
+    description: Current customer information. Also see the Person and Store tables.
+    columns:
+      - name: customerid
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: personid
+        description: Foreign key to Person.BusinessEntityID
+        tests:
+          - unique

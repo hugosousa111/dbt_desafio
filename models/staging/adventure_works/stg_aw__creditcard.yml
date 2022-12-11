@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_aw__creditcard
+    description: Customer credit card information.
+    columns:
+      - name: creditcardid
+        description: Primary key for CreditCard records.
+        tests:
+          - unique
+          - not_null
+      - name: cardtype
+        description: Credit card name.
+        tests:
+          - not_null

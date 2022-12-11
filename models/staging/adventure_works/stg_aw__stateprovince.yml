@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_aw__stateprovince
+    description: State and province lookup table.
+    columns:
+      - name: stateprovinceid
+        description: Primary key for StateProvince records.
+        tests:
+          - unique
+          - not_null
+      - name: countryregioncode
+        description: ISO standard country or region code. Foreign key to CountryRegion.CountryRegionCode.
+        tests:
+          - not_null
+      - name: stateprovincename
+        description: State or province description.
+        tests:
+          - not_null

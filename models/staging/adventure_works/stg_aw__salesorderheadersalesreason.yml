@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_aw__salesorderheadersalesreason
+    description: Cross-reference table mapping sales orders to sales reason codes.
+    columns:
+      - name: salesorderid
+        description: Foreign key to SalesOrderHeader.SalesOrderID.
+        tests:
+          - not_null
+      - name: salesreasonid
+        description: Foreign key to SalesReason.SalesReasonID.
+        tests:
+          - not_null

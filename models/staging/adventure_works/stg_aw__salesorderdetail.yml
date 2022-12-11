@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_aw__salesorderdetail
+    description: Individual products associated with a specific sales order. See SalesOrderHeader.
+    columns:
+      - name: salesorderdetailid
+        description: Primary key. One incremental unique number per product sold.
+        tests:
+          - unique
+          - not_null
+      - name: salesorderid
+        description: Foreign key to SalesOrderHeader.SalesOrderID.
+        tests:
+          - not_null
+      - name: orderqty
+        description: Quantity ordered per product.
+        tests:
+          - not_null
+      - name: productid
+        description: Product sold to customer. Foreign key to Product.ProductID.
+        tests:
+          - not_null
+      - name: unitprice
+        description: Selling price of a single product.
+        tests:
+          - not_null

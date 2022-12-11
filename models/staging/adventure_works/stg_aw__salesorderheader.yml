@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_aw__salesorderheader
+    description: General sales order information.
+    columns:
+      - name: salesorderid
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: orderdate
+        description: Dates the sales order was created.
+        tests:
+          - not_null
+      - name: orderstatus
+        description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled
+        tests:
+          - not_null
+      - name: customerid
+        description: Customer identification number. Foreign key to Customer.BusinessEntityID.
+        tests:
+          - not_null
+      - name: creditcardid
+        description: Credit card identification number. Foreign key to CreditCard.CreditCardID.
+      - name: shiptoaddressid
+        description: Customer shipping address. Foreign key to Address.AddressID.
+        tests: 
+          - not_null

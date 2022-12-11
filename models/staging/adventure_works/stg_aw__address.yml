@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_aw__address
+    description: Street address information for customers, employees, and vendors.
+    columns:
+      - name: addressid
+        description: Primary key for Address records.
+        tests:
+          - unique
+          - not_null
+      - name: city
+        description: Name of the city.
+        tests:
+          - not_null
+      - name: stateprovinceid
+        description: Unique identification number for the state or province. Foreign key to StateProvince table.
+        tests:
+          - not_null

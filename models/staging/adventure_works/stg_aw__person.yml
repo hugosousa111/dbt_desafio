@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_aw__person
+    description: "Human beings involved with AdventureWorks: employees, customer contacts, and vendor contacts."
+    columns:
+      - name: businessentityid
+        description: Primary key for Person records.
+        tests:
+          - unique
+          - not_null
+      - name: namestyle
+        description: 0 = The data in FirstName and LastName are stored in western style (first name, last name) order.  1 = Eastern style (last name, first name) order.
+        tests:
+          - not_null
+      - name: firstname
+        description: First name of the person.
+        tests:
+          - not_null
+      - name: middlename
+        description: Middle name or middle initial of the person.
+      - name: lastname
+        description: Last name of the person.
+        tests:
+          - not_null
