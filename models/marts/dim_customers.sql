@@ -40,6 +40,7 @@ with
             , customer_join_person.firstname
             , customer_join_person.middlename
             , customer_join_person.lastname
+            , concat(customer_join_person.firstname, ' ', ifnull(customer_join_person.middlename,''), ' ', customer_join_person.lastname) as fullname
         from stg_salesorderheader 
         left join customer_join_person on stg_salesorderheader.customerid = customer_join_person.customerid
     )

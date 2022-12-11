@@ -33,3 +33,7 @@ models:
         description: Last name of the person.
         tests:
           - not_null
+      - name: fullname
+        description: full name concat, firstname + middlename + lastname.
+        tests:
+          - not_null
