@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_salesreason
+    description: Sales reason dimension
+    columns:
+      - name: salesreason_sk
+        description: auto-incremental surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: salesreasonid
+        description: sales reason id. Foreign Key to salesreason.salesreasonid
+        tests:
+          - unique
+          - not_null
+      - name: salesreasonname
+        description: sales reason name.
+        tests:
+          - not_null
+      - name: reasontype
+        description: reason type.
+        tests:
+          - not_null

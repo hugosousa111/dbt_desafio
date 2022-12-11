@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_datesales
+    description: Date sales dimension
+    columns:
+      - name: datesales_sk
+        description: auto-incremental surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: orderdate
+        description: order date. salesorderheader.orderdate
+        tests:
+          - unique
+          - not_null
+      - name: saleyear
+        description: sale year
+        tests:
+          - not_null
+      - name: salemonth
+        description: sale month
+        tests:
+          - not_null
+      - name: saleday
+        description: sale day
+        tests:
+          - not_null

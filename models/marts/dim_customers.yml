@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Customers dimension
+    columns:
+      - name: customers_sk
+        description: auto-incremental surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: customerid
+        description: customer id. Foreign Key to customer.customerid
+        tests:
+          - unique
+          - not_null
+      - name: personid
+        description: person id. person.businessentityid
+        tests:
+          - unique
+          - not_null
+      - name: namestyle
+        description: 0 = The data in FirstName and LastName are stored in western style (first name, last name) order.  1 = Eastern style (last name, first name) order.
+        tests:
+          - not_null
+      - name: firstname
+        description: First name of the person.
+        tests:
+          - not_null
+      - name: middlename
+        description: Middle name or middle initial of the person.
+      - name: lastname
+        description: Last name of the person.
+        tests:
+          - not_null

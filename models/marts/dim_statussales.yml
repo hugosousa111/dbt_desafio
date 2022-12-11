@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_statussales
+    description: Status sales dimension
+    columns:
+      - name: statussales_sk
+        description: auto-incremental surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: orderstatus
+        description: Order current status. 1 = In process; 2 = Approved; 3 = Backordered; 4 = Rejected; 5 = Shipped; 6 = Cancelled
+        tests:
+          - unique
+          - not_null
+      - name: statusdescription
+        description: status description.
+        tests:
+          - not_null

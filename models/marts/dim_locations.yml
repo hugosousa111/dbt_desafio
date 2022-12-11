@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_locations
+    description: Locations dimension
+    columns:
+      - name: locations_sk
+        description: auto-incremental surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: shiptoaddressid
+        description: ship to address id. salesorderheader.shiptoaddressid
+        tests:
+          - unique
+          - not_null
+      - name: city
+        description: city
+        tests:
+          - not_null
+      - name: stateprovinceid
+        description: state province id
+        tests:
+          - not_null
+      - name: stateprovincename
+        description: state province name
+        tests:
+          - not_null
+      - name: countryregioncode
+        description: country region code
+        tests:
+          - not_null
+      - name: countryname
+        description: country name
+        tests:
+          - not_null

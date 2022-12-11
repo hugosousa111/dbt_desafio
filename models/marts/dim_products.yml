@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Products dimension
+    columns:
+      - name: products_sk
+        description: auto-incremental surrogate key
+        tests:
+          - unique
+          - not_null
+      - name: productid
+        description: product id. Foreign Key to product.productid
+        tests:
+          - unique
+          - not_null
+      - name: productname
+        description: product name.
+        tests:
+          - not_null
